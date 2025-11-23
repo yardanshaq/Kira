@@ -16,7 +16,7 @@ import {
     registerProcess,
     setupMaintenance,
 } from "#connection";
-import { naruyaizumi } from "#socket";
+import { yardanshaq } from "#socket";
 
 const logger = pino({
     level: "info",
@@ -81,7 +81,7 @@ async function KIRA() {
         })
     );
 
-    global.conn = naruyaizumi(connection);
+    global.conn = yardanshaq(connection);
     global.conn.isInit = false;
 
     if (!auth.state.creds.registered && pairingNumber) {
