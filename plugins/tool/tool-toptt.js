@@ -1,5 +1,3 @@
-import { convert } from "#add-on";
-
 let handler = async (m, { conn, usedPrefix, command }) => {
     try {
         const q = m.quoted ? m.quoted : m;
@@ -14,32 +12,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         if (!Buffer.isBuffer(buffer) || buffer.length === 0)
             return m.reply("Failed to get media buffer.");
 
-        const audio = await convert(buffer, {
-            format: "opus",
-            sampleRate: 48000,
-            channels: 1,
-            bitrate: "64k",
-            ptt: true,
-        });
-
-        const finalBuffer =
-            audio instanceof Buffer
-                ? audio
-                : audio?.buffer
-                  ? Buffer.from(audio.buffer)
-                  : audio?.data
-                    ? Buffer.from(audio.data)
-                    : Buffer.from(audio);
-
-        await conn.sendMessage(
-            m.chat,
-            {
-                audio: finalBuffer,
-                mimetype: "audio/ogg; codecs=opus",
-                ptt: true,
-            },
-            { quoted: m }
-        );
+        await conn.sendFile(m.chat, buffer, "", "", m, true);
     } catch (e) {
         conn.logger.error(e);
         m.reply(`Error: ${e.message}`);

@@ -1,4 +1,3 @@
-import { convert } from "#add-on";
 import { spotify } from "#spotify";
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
@@ -6,6 +5,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         return m.reply(`Please provide a song title.\n› Example: ${usedPrefix + command} Swim`);
 
     await global.loading(m, conn);
+
     try {
         const { success, title, channel, cover, url, downloadUrl, error } = await spotify(
             args.join(" ")
@@ -17,42 +17,18 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
         const audioBuffer = Buffer.from(await audioRes.arrayBuffer());
 
-        const converted = await convert(audioBuffer, {
-            format: "opus",
-            bitrate: "128k",
-            channels: 1,
-            sampleRate: 48000,
-            ptt: true,
-        });
-
-        const finalBuffer =
-            converted instanceof Buffer
-                ? converted
-                : converted?.buffer
-                  ? Buffer.from(converted.buffer)
-                  : converted?.data
-                    ? Buffer.from(converted.data)
-                    : Buffer.from(converted);
-
-        await conn.sendMessage(
-            m.chat,
-            {
-                audio: finalBuffer,
-                mimetype: "audio/ogg; codecs=opus",
-                ptt: true,
-                contextInfo: {
-                    externalAdReply: {
-                        title,
-                        body: channel,
-                        thumbnailUrl: cover,
-                        mediaUrl: url,
-                        mediaType: 1,
-                        renderLargerThumbnail: true,
-                    },
+        await conn.sendFile(m.chat, audioBuffer, "audio.opus", "", m, true, {
+            contextInfo: {
+                externalAdReply: {
+                    title,
+                    body: channel,
+                    thumbnailUrl: cover,
+                    mediaUrl: url,
+                    mediaType: 1,
+                    renderLargerThumbnail: true,
                 },
             },
-            { quoted: m }
-        );
+        });
     } catch (e) {
         conn.logger.error(e);
         m.reply(`Error: ${e.message}`);
