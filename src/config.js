@@ -64,7 +64,6 @@ global.loading = async (m, conn, back = false) => {
         await conn.sendPresenceUpdate("available", m.chat);
         return;
     }
-    await conn.sendPresenceUpdate("composing", m.chat);
 };
 
 global.dfail = (type, m, conn) => {
