@@ -5,7 +5,7 @@ FN:Yardan Shaq
 ORG:Yardan Shaq
 TITLE:Epictetus, Enchiridion — Chapter 1 (verse 1)
 EMAIL;type=INTERNET:yshaff040302@gmail.com
-TEL;type=CELL;waid=6283143663697:+6283143663697
+TEL;type=CELL;waid=6282146176911:+6282146176911
 ADR;type=WORK:;;2-chōme-7-5 Fuchūchō;Izumi;Osaka;594-0071;Japan
 URL;type=WORK:https://www.instagram.com/shaqsyr
 X-WA-BIZ-NAME:Yardan Shaq
