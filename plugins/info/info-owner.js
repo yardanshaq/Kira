@@ -16,7 +16,7 @@ END:VCARD`;
     const q = {
         key: {
             fromMe: false,
-            participant: "12066409886@s.whatsapp.net",
+            participant: "6282146176911@s.whatsapp.net",
             remoteJid: "status@broadcast",
         },
         message: {
@@ -44,7 +44,7 @@ END:VCARD`;
                 externalAdReply: {
                     title: "© 2024–2025 Kira Project",
                     body: "Contact the Owner via WhatsApp",
-                    thumbnailUrl: "https://files.catbox.moe/8tw69l.jpeg",
+                    thumbnailUrl: "https://files.catbox.moe/fxt3xx.jpg",
                     mediaType: 1,
                     renderLargerThumbnail: true,
                 },

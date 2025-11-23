@@ -137,7 +137,7 @@ async function mainMenu(conn, m, pkg, usedPrefix, command, timestamp) {
         m.chat,
         {
             product: {
-                productImage: { url: "https://files.catbox.moe/1moinz.jpg" },
+                productImage: { url: "https://kiracloud.my.id/RC7vVY.png" },
                 productId: "25015941284694382",
                 title: "Kira Menu",
                 description: "WhatsApp Bot Command Menu",
