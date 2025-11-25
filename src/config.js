@@ -36,7 +36,7 @@ global.config = {
      * 2. Do NOT use phone numbers, as JIDs can vary across environments.
      */
     owner: [
-        ["121599785205762", "Yardan Shaq"],
+        ["216939536380004", "Yardan Shaq"],
         ["254112025309400", "Ilhamsqa"],
         // ["LOCAL_IDENTIFIER", "Owner Name"],
     ],

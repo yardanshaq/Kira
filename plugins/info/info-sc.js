@@ -60,7 +60,7 @@ Pull Req: https://github.com/yardanshaq/kira/pulls
                 signedUrl:
                     "https:/www.yardanshaq.xyz",
             },
-            businessOwnerJid: "121599785205762@lid",
+            businessOwnerJid: "216939536380004@lid",
             footer: text,
             contextInfo: {
                 forwardingScore: 999,

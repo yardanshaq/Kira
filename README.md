@@ -168,7 +168,7 @@ bun start
 global.config = {
     // Owner Configuration
     owner: [
-        ["121599785205762", "Yardan Shaq"],
+        ["216939536380004", "Yardan Shaq"],
         ["254112025309400", "Ilhamsqar"],
         // Add more: ["LOCAL_IDENTIFIER", "Name"]
     ],
